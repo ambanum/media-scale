@@ -26,6 +26,14 @@
 		"implicit-arrow-linebreak": [
 			"off"
 		],
+		"import/no-extraneous-dependencies": [
+			"error",
+			{
+				"devDependencies": [
+					"**/*.test.js"
+				]
+			}
+		],
 		"no-param-reassign": 0,
 		"no-underscore-dangle": 0,
 		"no-tabs": 0,

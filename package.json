@@ -22,7 +22,8 @@
     "mocha": "^6.1.4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "NODE_ENV=test mocha \"./app/**/*.test.js\"",
+    "start": "node ./app/server"
   },
   "repository": {
     "type": "git",
