@@ -1,6 +1,6 @@
-# README
+### [ENGLISH]
 
-### [EN]
+## Context scale : use and purpose
 
 When fighting disinformation, analyses and fact-checks produced often relay - when they are not based on - **figures to measure the impact of a content** on a given society. 
 
@@ -16,9 +16,9 @@ In a spreadsheet (.csv file), the number of engagements (shares, likes and comme
 
 Therefore, **quantitative data is both contextualized and put into perspective**, in a **clear and accessible** way.
 
-[To the chatbot]()
+### [FRANÇAIS]
 
-### [FR]
+## Echelle contextuelle : buts et usages
 
 Dans le cadre de la lutte contre la désinformation, les analyses et vérifications menées reprennent régulièrement - voire se basent sur - des **données chiffrées pour mesurer l'impact d'un contenu** sur une société. Il peut s'agir par exemple du nombre de réactions à ce contenu, du nombre de commentaires, ou encore du nombre de fois qu'un contenu a été partagé.
 
@@ -30,9 +30,6 @@ Sous la forme d'un tableur (fichier au format .csv), le nombre d'engagements (pa
 - sa date de publication,
 - son sujet (titre). 
 Il y a donc une **contextualisation et une mise en perspective de données chiffrées**, facilement **lisibles et accessibles**. 
-
-[Accéder au chatbot]()
-
 
 # License
 
