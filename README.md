@@ -1,6 +1,10 @@
+# Media-scale
+
 ### [ENGLISH]
 
-## Context scale : use and purpose
+Compare one article's visibility on social media to known event's visibility in its regional's reference media to put number of reactions into perspective.
+
+## Motivation, use and purpose
 
 When fighting disinformation, analyses and fact-checks produced often relay - when they are not based on - **figures to measure the impact of a content** on a given society. 
 
@@ -16,9 +20,60 @@ In a spreadsheet (.csv file), the number of engagements (shares, likes and comme
 
 Therefore, **quantitative data is both contextualized and put into perspective**, in a **clear and accessible** way.
 
+## Installation
+
+	npm install
+
+## Usage
+
+To run the server:
+
+	npm start
+
+## API 
+
+Example:
+	
+	GET /api/media-scale/1.0/around?region=fr&shares=150000
+
+Response:
+
+```
+{
+	"Le Monde": {
+		"totalEngagements": "158000",
+		"facebook": "148100",
+		"twitter": "9600",
+		"pinterest": "1",
+		"reddit": "273",
+		"country": "FR",
+		"source": "Le Monde",
+		"date": "2017-07-10",
+		"title": "La sixième extinction de masse des animaux s’accélère",
+		"url": "https://www.lemonde.fr/biodiversite/article/2017/07/10/la-sixieme-extinction-de-masse-des-animaux-s-accelere-de-maniere-dramatique_5158718_1652692.html"
+	},
+	"Le Figaro": {
+		"totalEngagements": "152900",
+		"facebook": "152100",
+		"twitter": "780",
+		"pinterest": "0",
+		"reddit": "0",
+		"country": "FR",
+		"source": "Le Figaro",
+		"date": "2018-10-22",
+		"title": "Fraude : 1,7 million d'euros d'allocations sociales détournées vers la Roumanie",
+		"url": "http://www.lefigaro.fr/social/2018/10/22/20011-20181022ARTFIG00138-un-reseau-detourne-17-million-d-euros-d-allocations-sociales.php"
+	},
+	…
+}
+```
+- - - - - - -
+
 ### [FRANÇAIS]
 
-## Echelle contextuelle : buts et usages
+Comparez la visibilité d'un article sur les médias sociaux à la visibilité d'un événement connu dans les médias de référence de sa région pour mettre en perspective le nombre de réactions.
+
+## Motivation, buts et usages
 
 Dans le cadre de la lutte contre la désinformation, les analyses et vérifications menées reprennent régulièrement - voire se basent sur - des **données chiffrées pour mesurer l'impact d'un contenu** sur une société. Il peut s'agir par exemple du nombre de réactions à ce contenu, du nombre de commentaires, ou encore du nombre de fois qu'un contenu a été partagé.
 
@@ -31,10 +86,12 @@ Sous la forme d'un tableur (fichier au format .csv), le nombre d'engagements (pa
 - son sujet (titre). 
 Il y a donc une **contextualisation et une mise en perspective de données chiffrées**, facilement **lisibles et accessibles**. 
 
+- - - - - - -
+
 # License
 
-The code for this software is distributed under the European Union Public Licence (EUPL) v1.2.
+- The code for this software is distributed under the European Union Public Licence (EUPL) v1.2.
 
-The data in this repository is distributed under an ODC-BY 1.0 license. That means you are free to share (to copy, distribute and use the database), to Create (to produce works from the database), to Adapt (to modify, transform and build upon the database) as long as you attribute to *Office of the French Ambassador for Digital Affairs*.
+- Data in this repository are distributed under an ODC-BY 1.0 license. That means you are free to share (to copy, distribute and use the database), to Create (to produce works from the database), to Adapt (to modify, transform and build upon the database) as long as you attribute to *Office of the French Ambassador for Digital Affairs*.
 
 Contact the author if you have any specific need or question regarding licensing.
