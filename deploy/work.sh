@@ -5,7 +5,6 @@ set -e
 
 APP_DIR=/home/cloud/media-scale
 GIT_URL=git@github.com:ambanum/media-scale.git
-RESTART_ARGS=
 
 ### Automation steps ###
 
