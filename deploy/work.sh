@@ -25,4 +25,4 @@ npm install --production
 npm prune --production
 
 # Restart app
-$ PORT=3030 forever restart app/server.js || PORT=3030 forever start app/server.js
+PORT=3030 forever restart app/server.js || PORT=3030 forever start app/server.js
