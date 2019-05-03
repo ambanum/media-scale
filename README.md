@@ -30,13 +30,29 @@ To run the server:
 
 	npm start
 
-## API 
-
-Example:
+## API
 	
-	GET /api/media-scale/1.0/around?region=fr&shares=150000
+The following API endpoint can be used to programmatically get articles with a comparable visibility :
 
-Response:
+### GET media-scale/1.0/around
+
+Returns posts with similar shares number for each major newspaper of the given region
+
+#### Query parameters
+
+| Name  | Required | Description | Example |
+| ----- | -------- | ----------- | ------- |
+| region | required | The region where article comparison has to be done. Country code in ISO 3166-1 alpha-2 | fr |
+| shares | required | The number of shares to compare to. Integer > 0 | 8765 |
+
+
+
+
+#### Example Request
+	
+	GET /media-scale/1.0/around?region=fr&shares=150000
+
+#### Example Response
 
 ```
 {
