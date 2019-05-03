@@ -20,25 +20,29 @@ In a spreadsheet (.csv file), the number of engagements (shares, likes and comme
 
 Therefore, **quantitative data is both contextualized and put into perspective**, in a **clear and accessible** way.
 
-## Installation
+The comparison can be done manually or with the exposed API.
+
+## API
+
+### Installation
+
+Clone the repository then install dependencies:
 
 	npm install
 
-## Usage
+### Usage
 
-To run the server:
+Start the server:
 
 	npm start
-
-## API
 	
-The following API endpoint can be used to programmatically get articles with a comparable visibility :
+Then, the following API endpoint can be used to programmatically get articles with a comparable visibility:
 
-### GET media-scale/1.0/around
+#### GET media-scale/1.0/around
 
 Returns posts with similar shares number for each major newspaper of the given region
 
-#### Query parameters
+##### Query parameters
 
 | Name  | Required | Description | Example |
 | ----- | -------- | ----------- | ------- |
@@ -48,11 +52,11 @@ Returns posts with similar shares number for each major newspaper of the given r
 
 
 
-#### Example Request
+##### Example Request
 	
 	GET /media-scale/1.0/around?region=fr&shares=150000
 
-#### Example Response
+##### Example Response
 
 ```
 {
