@@ -10,11 +10,11 @@ router.get('/around', async (req, res, next) => {
 	const { region, shares } = req.query;
 	const errors = [];
 
-	if (!region) {
+	if (!region || region === 'undefined') {
 		errors.push('missing param `region`');
 	}
 
-	if (region && !validator.isISO31661Alpha2(region)) {
+	if (region && region !== 'undefined' && !validator.isISO31661Alpha2(region)) {
 		errors.push('invalid region code');
 	}
 
