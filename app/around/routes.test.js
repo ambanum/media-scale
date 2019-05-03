@@ -9,7 +9,7 @@ describe('API', () => {
 		const validRegionCode = 'fr';
 		const invalidRegionCode = 'frr';
 		const notAlreadySupportedRegionCode = 'es';
-		const validShares = 100000;
+		const validShares = 10100;
 		const invalidShares = 'test';
 		let status;
 		let body;
@@ -35,7 +35,7 @@ describe('API', () => {
 			});
 		});
 
-		context('with missing `region` params', () => {
+		context('with missing `shares` params', () => {
 			before(async () => {
 				({ status, body } = await request(app).get(apiURL).query({ region: validRegionCode }));
 			});
@@ -87,7 +87,7 @@ describe('API', () => {
 			});
 
 			it('responds with 200 HTTP code', () => expect(status).to.equal(200));
-			it('responds with errors explaining that the region is not found', () => {
+			it('responds with comparable articles', () => {
 				expect(body).to.deep.equal({
 					'Le monde': {
 						date: '2019-04-11',
@@ -95,7 +95,7 @@ describe('API', () => {
 						pinterest: '167',
 						reddit: '5674',
 						title: 'Benoît XVI attribue la pédophilie dans l’Eglise à Mai 68 et à « l’absence de Dieu »',
-						totalEngagements: '123126',
+						totalEngagements: '12310',
 						twitter: '51658',
 						url: 'https://www.lemonde.fr/societe/article/2019/04/11/benoit-xvi-attribue-la-pedophilie-dans-l-eglise-a-mai-68-et-a-l-absence-de-dieu_5449019_3224.html',
 					},
@@ -105,7 +105,7 @@ describe('API', () => {
 						pinterest: '167',
 						reddit: '36543',
 						title: 'Accès à l’eau et changement climatique au Sahel : «Le plus simple est de fabriquer des citernes»',
-						totalEngagements: '126776',
+						totalEngagements: '13310',
 						twitter: '51658',
 						url: 'https://www.liberation.fr/planete/2019/05/01/acces-a-l-eau-et-changement-climatique-au-sahel-le-plus-simple-est-de-fabriquer-des-citernes_1724175',
 					}

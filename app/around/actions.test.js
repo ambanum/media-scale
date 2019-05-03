@@ -10,8 +10,8 @@ const record = {
 	twitter: '1',
 	url: 'https://www.source1.fr',
 };
-const totalEngagementsSource1 = ['10', '50', '100', '1000', '10000', '100000'];
-const totalEngagementsSource2 = ['11', '50', '250', '1111', '11111', '111111'];
+const totalEngagementsSource1 = ['11', '60', '90', '1001', '10001', '100000'];
+const totalEngagementsSource2 = ['12', '52', '251', '1111', '11111', '111111'];
 const records = [];
 totalEngagementsSource1.forEach(totalEngagements => records.push(Object.assign({}, record, { source: 'source1', totalEngagements })));
 totalEngagementsSource2.forEach(totalEngagements => records.push(Object.assign({}, record, { source: 'source2', totalEngagements })));
@@ -21,14 +21,14 @@ describe('Around actions', () => {
 		context('with proper params', () => {
 			let results;
 			before(() => {
-				results = compare(records, 10000);
+				results = compare(records, 10100);
 			});
 			it('returns one dataset for each source', () => {
 				expect(Object.keys(results)).to.deep.equal(['source1', 'source2']);
 			});
 			it('returns the record with the closest `totalEngagements` to the given `shares` number', () => {
 				const totalEngagements = Object.keys(results).map(source => results[source].totalEngagements);
-				expect(totalEngagements).to.deep.equal(['10000', '11111']);
+				expect(totalEngagements).to.deep.equal(['10001', '11111']);
 			});
 			it('returns proper attributes for each source', () => {
 				expect(results).to.deep.equal({
@@ -38,7 +38,7 @@ describe('Around actions', () => {
 						pinterest: '1',
 						reddit: '1',
 						title: 'title 1',
-						totalEngagements: '10000',
+						totalEngagements: '10001',
 						twitter: '1',
 						url: 'https://www.source1.fr',
 					},
@@ -59,10 +59,10 @@ describe('Around actions', () => {
 		context('when the given `shares` number is a string', () => {
 			let results;
 			before(() => {
-				results = compare(records, '10000');
+				results = compare(records, '12000');
 			});
 			it('returns proper results', () => {
-				expect(results.source1.totalEngagements).to.equal('10000');
+				expect(results.source1.totalEngagements).to.equal('10001');
 			});
 		});
 
@@ -72,7 +72,17 @@ describe('Around actions', () => {
 				results = compare(records, 75);
 			});
 			it('returns the one with the highest number of engagement', () => {
-				expect(results.source1.totalEngagements).to.equal('100');
+				expect(results.source1.totalEngagements).to.equal('90');
+			});
+		});
+
+		context('when there are no articles in the same range', () => {
+			let results;
+			before(() => {
+				results = compare(records, 1000000);
+			});
+			it('returns the one with the highest number of engagement', () => {
+				expect(results).to.be.empty;
 			});
 		});
 	});
