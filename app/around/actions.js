@@ -4,7 +4,16 @@ const fs = require('fs');
 
 function compare(records, shares) {
 	const result = {};
+	// make a copy to allow reversing the array not in place
+	const scaleMinBoundary = config.get('scale').slice().reverse().find(value => value < shares);
+	const scaleMaxBoundary = config.get('scale').find(value => shares <= value);
+
 	records.forEach((record) => {
+		// if record is outside boundaries, nothing to do
+		if (record.totalEngagements <= scaleMinBoundary || record.totalEngagements > scaleMaxBoundary) {
+			return;
+		}
+
 		const previous = result[record.source];
 
 		// if there is not already a result for this source, save it
