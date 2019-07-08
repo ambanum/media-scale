@@ -88,6 +88,42 @@ Returns press articles with similar shares number for each major newspaper of th
 }
 ```
 
+### Add data for a country
+
+Create a CSV file named with the ISO 3166-1 alpha-2 country code (eg: `dk.csv`) in the `data` folder.
+
+Each row should contains following columns:
+- `totalEngagements`: Number of engagements on all social platforms combined
+- `facebook`: Number of engagements on Facebook
+- `twitter`: Number of engagements on Twitter
+- `pinterest`: Number of engagements on Pinterest
+- `reddit`: Number of engagements on Reddit
+- `country`: Country/Region of the press article
+- `source`: Newspaper name
+- `date`: Publication date
+- `title`: Title of the press article
+- `url`: Link to the press article
+
+You can take example from the files already present in the `data` folder.
+
+Then modify the `default.js` config file to add the country in supported countries:
+
+```
+supportedCountries: ['fr', 'gb', 'dk'],
+```
+
+And specify the path of the data file:
+
+```
+dataFilePaths: {
+	fr: './data/fr.csv',
+	gb: './data/gb.csv',
+	dk: './data/dk.csv'
+}
+```
+
+That's it.
+
 - - - - - - -
 
 # License
