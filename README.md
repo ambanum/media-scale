@@ -40,7 +40,7 @@ Then, the following API endpoint can be used to programmatically get articles wi
 
 #### GET media-scale/1.0/around
 
-Returns posts with similar shares number for each major newspaper of the given region
+Returns press articles with similar shares number for each major newspaper of the given region
 
 ##### Query parameters
 
