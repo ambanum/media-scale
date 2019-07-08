@@ -87,24 +87,6 @@ Returns posts with similar shares number for each major newspaper of the given r
 	…
 }
 ```
-- - - - - - -
-
-### [FRANÇAIS]
-
-Comparez la visibilité d'un article sur les médias sociaux à la visibilité d'un événement connu dans les médias de référence de sa région pour mettre en perspective le nombre de réactions.
-
-## Motivation, buts et usages
-
-Dans le cadre de la lutte contre la désinformation, les analyses et vérifications menées reprennent régulièrement - voire se basent sur - des **données chiffrées pour mesurer l'impact d'un contenu** sur une société. Il peut s'agir par exemple du nombre de réactions à ce contenu, du nombre de commentaires, ou encore du nombre de fois qu'un contenu a été partagé.
-
-Or, ces données sont rarement **mises en perspective**. Plutôt que de se focaliser sur leur aspect quantitatif, nous proposons de les organiser en fonction d'une échelle de pertinence. Ainsi, en considérant le sujet du contenu plutôt que son nombre de partages, on aboutit à une **échelle de référence qualitative**.
-
-Sous la forme d'un tableur (fichier au format .csv), le nombre d'engagements (partages, likes et commentaires) suscités par un article est lié à : 
-- son pays d'origine, 
-- sa source (principaux journaux nationaux), 
-- sa date de publication,
-- son sujet (titre). 
-Il y a donc une **contextualisation et une mise en perspective de données chiffrées**, facilement **lisibles et accessibles**. 
 
 - - - - - - -
 
