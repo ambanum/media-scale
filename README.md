@@ -38,7 +38,7 @@ The comparison can be done manually or with the exposed API.
 
 ## API
 
-Available at [https://disinfo.quaidorsay.fr/api/media-scale/1.0](https://disinfo.quaidorsay.fr/api/media-scale/1.0)
+A public test instance is available at [https://disinfo.quaidorsay.fr/api/media-scale/1.0](https://disinfo.quaidorsay.fr/api/media-scale/1.0)
 
 ### GET /around
 
