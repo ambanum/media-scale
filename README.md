@@ -17,6 +17,7 @@ In a spreadsheet (.csv file), the number of engagements (shares, likes and comme
 - its topic (title).
 
 Therefore, **quantitative data is both contextualized and put into perspective**, in a **clear and accessible** way.
+The comparison can be done manually or with the exposed API.
 
 > Comparez la visibilité d'un article sur les médias sociaux à la visibilité d'un événement connu dans les médias de référence de sa région pour mettre en perspective le nombre de réactions.
 
@@ -33,8 +34,6 @@ Therefore, **quantitative data is both contextualized and put into perspective**
 > - son sujet (titre).
 
 > Il y a donc une **contextualisation et une mise en perspective de données chiffrées**, facilement **lisibles et accessibles**.
-
-The comparison can be done manually or with the exposed API.
 
 ## API
 
