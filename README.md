@@ -91,7 +91,7 @@ Returns press articles with similar shares number for each major newspaper of th
 
 ## Development
 
-[Node](https://nodejs.org/en/) is required as this API is built on top of it.
+This API is built with [Node](https://nodejs.org/en/). You will need to [install it](https://nodejs.org/en/download/) to run this API.
 
 ### Installation
 
