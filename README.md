@@ -1,7 +1,5 @@
 # Media-scale
 
-### [ENGLISH]
-
 Compare one article's visibility on social media to known event's visibility in its regional's reference media to put number of reactions into perspective.
 
 ## Motivation, use and purpose
@@ -20,43 +18,44 @@ In a spreadsheet (.csv file), the number of engagements (shares, likes and comme
 
 Therefore, **quantitative data is both contextualized and put into perspective**, in a **clear and accessible** way.
 
+> Comparez la visibilité d'un article sur les médias sociaux à la visibilité d'un événement connu dans les médias de référence de sa région pour mettre en perspective le nombre de réactions.
+
+> ## Motivation, buts et usages
+
+> Dans le cadre de la lutte contre la désinformation, les analyses et vérifications menées reprennent régulièrement - voire se basent sur - des **données chiffrées pour mesurer l'impact d'un contenu** sur une société. Il peut s'agir par exemple du nombre de réactions à ce contenu, du nombre de commentaires, ou encore du nombre de fois qu'un contenu a été partagé.
+
+> Or, ces données sont rarement **mises en perspective**. Plutôt que de se focaliser sur leur aspect quantitatif, nous proposons de les organiser en fonction d'une échelle de pertinence. Ainsi, en considérant le sujet du contenu plutôt que son nombre de partages, on aboutit à une **échelle de référence qualitative**.
+
+> Sous la forme d'un tableur (fichier au format .csv), le nombre d'engagements (partages, likes et commentaires) suscités par un article est lié à :
+> - son pays d'origine,
+> - sa source (principaux journaux nationaux),
+> - sa date de publication,
+> - son sujet (titre).
+
+> Il y a donc une **contextualisation et une mise en perspective de données chiffrées**, facilement **lisibles et accessibles**.
+
 The comparison can be done manually or with the exposed API.
 
 ## API
 
-### Installation
+Available at [https://disinfo.quaidorsay.fr/api/media-scale/1.0](https://disinfo.quaidorsay.fr/api/media-scale/1.0)
 
-Clone the repository then install dependencies:
-
-	npm install
-
-### Usage
-
-Start the server:
-
-	npm start
-
-Then, the following API endpoint can be used to programmatically get articles with a comparable visibility:
-
-#### GET media-scale/1.0/around
+### GET /around
 
 Returns press articles with similar shares number for each major newspaper of the given region
 
-##### Query parameters
+#### Query parameters
 
 | Name  | Required | Description | Example |
 | ----- | -------- | ----------- | ------- |
 | region | required | The region where article comparison has to be done. Country code in ISO 3166-1 alpha-2 | fr |
 | shares | required | The number of shares to compare to. Integer > 0 | 8765 |
 
-
-
-
-##### Example Request
+#### Example Request
 
 	GET /media-scale/1.0/around?region=fr&shares=150000
 
-##### Example Response
+#### Example Response
 
 ```
 {
@@ -87,6 +86,32 @@ Returns press articles with similar shares number for each major newspaper of th
 	…
 }
 ```
+
+- - -
+
+## Development
+
+[Node](https://nodejs.org/en/) is required as this API is built on top of it.
+
+### Installation
+
+Clone the repository and install dependencies:
+
+```sh
+git clone https://github.com/ambanum/media-scale.git
+cd disinformation-encyclopedia
+npm install
+```
+
+### Usage
+
+Start the server:
+
+```sh
+	npm start
+```
+
+Then, the previously described API endpoint can be used to programmatically get articles with a comparable visibility.
 
 ### Add data for a country
 
@@ -124,7 +149,12 @@ dataFilePaths: {
 
 That's it.
 
-- - - - - - -
+## Deployment
+
+Clone the repository on your server, install dependencies and run the webserver.
+We suggest to use a production process manager for Node.js like [pm2](https://github.com/Unitech/pm2) or [Forever](https://github.com/foreversd/forever#readme)
+
+- - -
 
 # License
 
