@@ -152,7 +152,7 @@ That's it.
 ## Deployment
 
 Clone the repository on your server, install dependencies and run the webserver.
-We suggest to use a production process manager for Node.js like [pm2](https://github.com/Unitech/pm2) or [Forever](https://github.com/foreversd/forever#readme)
+We suggest to use a production process manager for Node.js like [pm2](https://github.com/Unitech/pm2) or [Forever](https://github.com/foreversd/forever#readme).
 
 - - -
 
