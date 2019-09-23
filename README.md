@@ -1,6 +1,6 @@
 # Media-scale
 
-Compare one article's visibility on social media to known event's visibility in its regional's reference media to put number of reactions into perspective.
+Compare an article's visibility on social media to other known events visibility in its local reference media to give some perspective to the number of reactions.
 
 ## Motivation, use and purpose
 
