@@ -107,7 +107,7 @@ npm install
 Start the server:
 
 ```sh
-	npm start
+npm start
 ```
 
 Then, the previously described API endpoint can be used to programmatically get articles with a comparable visibility.
