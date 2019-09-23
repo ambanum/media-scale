@@ -98,7 +98,7 @@ Clone the repository and install dependencies:
 
 ```sh
 git clone https://github.com/ambanum/media-scale.git
-cd disinformation-encyclopedia
+cd media-scale
 npm install
 ```
 
