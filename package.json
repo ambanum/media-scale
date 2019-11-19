@@ -9,6 +9,7 @@
   "dependencies": {
     "config": "^3.1.0",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "csv-parse": "^4.4.1",
     "debug": "~2.6.9",
     "express": "~4.16.0",
@@ -28,10 +29,10 @@
     "supertest": "^4.0.2"
   },
   "scripts": {
-	"test": "NODE_ENV=test mocha \"./app/**/*.test.js\"",
-	"test:debug": "NODE_ENV=test mocha \"./app/**/*.test.js\" --inspect-brk --exit",
+    "test": "NODE_ENV=test mocha \"./app/**/*.test.js\"",
+    "test:debug": "NODE_ENV=test mocha \"./app/**/*.test.js\" --inspect-brk --exit",
     "start": "node ./app/server",
-	"deploy": "./deploy/initiate.sh"
+    "deploy": "./deploy/initiate.sh"
   },
   "repository": {
     "type": "git",
