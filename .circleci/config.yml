@@ -26,7 +26,7 @@ jobs:
       steps:
         - run:
             name: Clone Ops repo
-            command: git clone https://github.com/ambanum/disinfo.quaidorsay.fr-ops.git /disinfo.quaidorsay.fr-ops
+            command: git clone https://github.com/ambanum/disinfo.quaidorsay.fr-ops.git disinfo.quaidorsay.fr-ops
         - run:
             name: Update setuptools
             command: pip install --upgrade setuptools
@@ -36,15 +36,15 @@ jobs:
         - run:
             name: Install Ansible roles dependencies
             command: ansible-galaxy install -r requirements.yml
-            working_director: /disinfo.quaidorsay.fr-ops
+            working_director: disinfo.quaidorsay.fr-ops
         - run:
             name: Add password
             command: echo $ANSIBLE_VAULT_PASSWORD > vault.key
-            working_director: /disinfo.quaidorsay.fr-ops
+            working_director: disinfo.quaidorsay.fr-ops
         - run:
             name: Deploy app on the server
             command: ansible-playbook playbooks/apps/media-scale.yml -i inventories/production.yml -t update --diff
-            working_director: /disinfo.quaidorsay.fr-ops
+            working_director: disinfo.quaidorsay.fr-ops
 
 workflows:
   version: 2
