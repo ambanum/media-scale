@@ -23,16 +23,18 @@ jobs:
   deploy:
       machine:
         enabled: true
-      dependencies:
-        pre:
-          - pip install ansible
-          - pip install --upgrade setuptools
       steps:
         - run:
             name: Clone Ops repo
             command: git clone https://github.com/ambanum/disinfo.quaidorsay.fr-ops.git
         - run:
-            name: Install dependencies
+            name: Update setuptools
+            command: pip install --upgrade setuptools
+        - run:
+            name: Install Ansible
+            command: pip install ansible
+        - run:
+            name: Install Ansible roles dependencies
             command: ansible-galaxy install -r requirements.yml
         - run:
             name: Add password
