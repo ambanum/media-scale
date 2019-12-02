@@ -21,30 +21,30 @@ jobs:
           name: test
           command: npm test
   deploy:
-      machine:
-        enabled: true
-      steps:
-        - run:
-            name: Clone Ops repo
-            command: git clone https://github.com/ambanum/disinfo.quaidorsay.fr-ops.git disinfo.quaidorsay.fr-ops
-        - run:
-            name: Update setuptools
-            command: pip install --upgrade setuptools
-        - run:
-            name: Install Ansible
-            command: pip install ansible
-        - run:
-            name: Install Ansible roles dependencies
-            command: ansible-galaxy install -r requirements.yml
-            working_director: disinfo.quaidorsay.fr-ops
-        - run:
-            name: Add password
-            command: echo $ANSIBLE_VAULT_PASSWORD > vault.key
-            working_director: disinfo.quaidorsay.fr-ops
-        - run:
-            name: Deploy app on the server
-            command: ansible-playbook playbooks/apps/media-scale.yml -i inventories/production.yml -t update --diff
-            working_director: disinfo.quaidorsay.fr-ops
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "f8:eb:f2:35:d8:2c:c7:9b:8b:fa:18:b2:ae:07:2d:40"
+      - run:
+          name: Clone Ops repo
+          command: git clone https://github.com/ambanum/disinfo.quaidorsay.fr-ops.git /tmp/disinfo.quaidorsay.fr-ops
+      - run:
+          name: Update setuptools
+          command: pip install --upgrade setuptools
+      - run:
+          name: Install Ansible
+          command: pip install ansible
+      - run:
+          name: Install Ansible roles dependencies
+          command: cd /tmp/disinfo.quaidorsay.fr-ops && ansible-galaxy install -r requirements.yml
+      - run:
+          name: Add password
+          command: cd /tmp/disinfo.quaidorsay.fr-ops && echo $ANSIBLE_VAULT_PASSWORD > vault.key
+      - run:
+          name: Deploy app on the server
+          command: cd /tmp/disinfo.quaidorsay.fr-ops && ansible-playbook playbooks/apps/media-scale.yml -i inventories/production.yml -t update --diff
 
 workflows:
   version: 2
